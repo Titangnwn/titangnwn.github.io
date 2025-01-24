@@ -1,64 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="poto/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes bounceIn {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+        .bounce-in {
+            animation: bounceIn 1s;
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        .slide-in-up {
+            animation: slideInUp 1s ease-out;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        .zoom-in {
+            animation: zoomIn 0.5s ease-in-out;
+        }
+
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+        }
+        .hover-underline-animation:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: currentColor;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .hover-underline-animation:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .gradient-border {
+            border: 3px solid;
+            border-image-slice: 1;
+            border-width: 3px;
+            border-image-source: linear-gradient(to right, #4f46e5, #8b5cf6);
+        }
+    </style>
 </head>
-<body>
-  <div class="container">
-    <!-- Left Column -->
-    <div class="left-column">
-        <img src="poto/pasfoto.jpeg" alt="profile-photo" class="profile-photo">
-      <h2>Contact</h2>
-      <ul class="contact-info">
-        <li>📞 089643038119</li>
-        <li>📧 titan.farizal@gmail.com</li>
-        <li>📷 farizal_gunawan</li>
-        <li>📍 JL.cukang kawung</li>
-        <li>🔗 714240043</li>
-        <li>🌐 <a href="https://Titangwn.github.io">Titangwn.github.io</a></li>
-      </ul>
-      
-      <h2>Education</h2>
-      <p>2019-2022<br>SMK NEGERI 2 BANDUNG<br>Jurusan Teknik Mesin</p>
-      
-      <h2>Skills</h2>
-      <ul class="skills">
-        <li>Menggunakan Canva</li>
-        <li>Menggunakan Capcut</li>
-        <li>Menggunakan Auto CAD</li>
-        <li>Menggunakan Inventor</li>
-      </ul>
-      
-      <h2>Languages</h2>
-      <p>English (pasif)<br>Indonesia (aktif)</p>
-    </div>
-    
-    <!-- Right Column -->
-    <div class="right-column">
-      <h1>Mochammad Farizal Tryavala Gunawan</h1>
-      <h3>Mahasiswa ULBI</h3>
-      
-      <h2>Profile</h2>
-      <p>Lulusan dari SMK NEGERI 2 BANDUNG dengan jurusan teknik mesin dan pernah mengikuti pelatihan BBPVP Bandung dengan jurusan tune up injeksi</p>
-      
-      <h2>Pengalaman</h2>
-      <h4>PT Pindad</h4>
-      <p><strong>Drafter Magang</strong></p>
-      <ul>
-        <li>Mendesain Bahan Baku</li>
-        <li>Merancang dengan grup yang sudah di tentukan untuk merancang /membuat suatu alat</li>
-      </ul>
-      
-      <h4>pt.robonesia</h4>
-      <p><strong>Staff Magang</strong></p>
-      <ul>
-        <li>Membuat suatu modul untuk membuat/merancang game</li>
-        <li>Membuat modul tutorial merancang rc/robot</li>
-      </ul>
-    </div>
-  </div>
+<body class="bg-gradient-to-b from-gray-100 to-gray-200 font-sans">
+    <nav class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-4 shadow-lg sticky top-0 z-50 fade-in">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="TITAN.jpg" alt="Logo" class="w-20 h-20 rounded-full shadow-md bounce-in">
+                <a href="#" class="text-2xl font-bold hover-underline-animation">Biodata</a>
+            </div>
+            <div class="space-x-6">
+                <a href="#home" class="hover:text-gray-300 hover-underline-animation">Home</a>
+                <a href="#about" class="hover:text-gray-300 hover-underline-animation">About</a>
+                <a href="#skills" class="hover:text-gray-300 hover-underline-animation">Skill</a>
+                <a href="#kontak" class="hover:text-gray-300 hover-underline-animation">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-16 shadow-lg fade-in slide-in-up">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl font-extrabold">Hello, World!</h1>
+            <p class="text-lg mt-4">Selamat datang di halaman biodata saya.</p>
+            <a href="#home" class="mt-6 inline-block bg-white text-blue-600 font-bold py-2 px-4 rounded-full shadow-lg hover:bg-gray-200 transform hover:scale-105 transition">Tentang Saya</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto my-8 p-6 bg-white rounded-lg shadow-lg fade-in">
+        <div class="text-center mb-6">
+            <img src="saya.jpg" alt="Foto Profil" class="w-40 h-40 mx-auto rounded-full shadow-md gradient-border">
+            <h2 class="text-3xl font-semibold mt-4">Mochammad Farizal Tryvavali Gunawan</h2>
+            <p class="text-gray-600">Teknik Informatika | D4</p>
+        </div>
+
+        <section id="about" class="mb-8 bg-gray-50 p-6 rounded-lg shadow fade-in slide-in-up">
+            <h3 class="text-2xl font-bold mb-4 text-blue-500">Tentang Saya</h3>
+            <p class="text-gray-700 leading-relaxed">
+                Saya adalah mahasiswa Teknik Informatika yang memiliki minat dalam pengembangan web, data science, dan teknologi baru. Saya selalu berusaha untuk belajar hal-hal baru dan terus mengembangkan kemampuan saya.
+            </p>
+        </section>
+
+        <section id="skills" class="mb-8 bg-gray-50 p-6 rounded-lg shadow fade-in slide-in-up">
+            <h3 class="text-2xl font-bold mb-4 text-green-500">Skill</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="text-lg font-semibold">Pengembangan Web</h4>
+                    <p class="text-gray-700">HTML, CSS, JavaScript, Tailwind CSS</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold">Perancangan Mesin</h4>
+                    <p class="text-gray-700">Auto Cad, inventor,</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold">Misrosoft</h4>
+                    <p class="text-gray-700">Word, Accel, Power Point</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-8 bg-gray-50 p-6 rounded-lg shadow fade-in slide-in-up">
+            <h3 class="text-2xl font-bold mb-4 text-purple-500">Informasi Kontak</h3>
+            <ul class="text-gray-700 space-y-2">
+                <li><strong>Email:</strong> <a href="mailto:titan.farizal@gmail.com" class="text-blue-500 hover:underline">titan.farizal@gmail.com</a></li>
+                <li><strong>Telepon:</strong> 089643038119</li>
+                <li><strong>Alamat:</strong> Bandung, Indonesia</li>
+            </ul>
+        </section>
+
+        <section id="kontak" class="bg-gray-50 p-6 rounded-lg shadow fade-in slide-in-up">
+            <h3 class="text-2xl font-bold mb-4 text-green-500">Media Sosial</h3>
+            <div class="flex justify-center gap-6">
+                <a href="https://www.tiktok.com" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow hover:bg-blue-600 transform hover:scale-105 transition">TikTok</a>
+                <a href="https://www.instagram.com/farizal_gunawan?igsh=dW4yZTBvdzg2cWN1" class="bg-pink-500 text-white px-4 py-2 rounded-full shadow hover:bg-pink-600 transform hover:scale-105 transition">Instagram</a>
+                <a href="https://github.com/Titangnwn" class="bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transform hover:scale-105 transition">GitHub</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6 mt-8 fade-in">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Farizal. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
 </body>
 </html>
